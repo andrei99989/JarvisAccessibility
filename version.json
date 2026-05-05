@@ -1,9 +1,9 @@
 {
-  "versionCode": 76,
-  "versionName": "1.8.4",
+  "versionCode": 77,
+  "versionName": "1.8.5",
   "releaseUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/tag/stable",
   "apkUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/download/stable/app-debug.apk",
   "serverVersionCode": 9,
   "serverVersionName": "1.0.8",
-  "notes": "Fix final status Accessibility: citește activarea direct din Android Settings și nu mai blochează comenzile disponibile."
+  "notes": "Fix fallback real pentru deschiderea aplicațiilor când serviciul Accessibility este activ în setări dar instanța internă nu este conectată."
 }

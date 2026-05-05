@@ -1322,7 +1322,7 @@ class MainActivity : Activity() {
 
         if (service == null) {
             resultText.text =
-                "Comandă: $command\n\nRezultat:\n" + if (isJarvisAccessibilityEnabledInSettings()) "Serviciul Accessibility este activ în setări. Comanda va continua prin rutele disponibile." else "Serviciul Accessibility nu este activ. Activează Jarvis Accessibility din setări."
+                "Comandă: $command\n\nRezultat:\n" + if (isJarvisAccessibilityEnabledInSettings()) executeCommandWithoutAccessibilityService(command) else "Serviciul Accessibility nu este activ. Activează Jarvis Accessibility din setări."
             updateServiceStatus()
             return
         }
