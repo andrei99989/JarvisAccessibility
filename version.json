@@ -1,9 +1,9 @@
 {
-  "versionCode": 77,
-  "versionName": "1.8.5",
+  "versionCode": 80,
+  "versionName": "1.9.0",
   "releaseUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/tag/stable",
   "apkUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/download/stable/app-debug.apk",
-  "serverVersionCode": 9,
-  "serverVersionName": "1.0.8",
-  "notes": "Fix fallback real pentru deschiderea aplicațiilor când serviciul Accessibility este activ în setări dar instanța internă nu este conectată."
+  "serverVersionCode": 10,
+  "serverVersionName": "1.1.0",
+  "notes": "Jarvis Brain Core 2.0: router nou pentru comenzi de aplicații, aliasuri extinse și prioritate maximă pentru deschiderea aplicațiilor instalate."
 }

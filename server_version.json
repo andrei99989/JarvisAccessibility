@@ -1,8 +1,8 @@
 {
-  "serverVersionCode": 9,
-  "serverVersionName": "1.0.8",
+  "serverVersionCode": 10,
+  "serverVersionName": "1.1.0",
   "serverUrl": "https://raw.githubusercontent.com/andrei99989/JarvisAccessibility/main/termux-server/server.py",
-  "androidAppVersionCode": 74,
-  "androidAppVersionName": "1.8.2",
-  "notes": "Upgrade sincronizat: serverul urmărește APK 1.8.2 cu crash guard Accessibility."
+  "androidAppVersionCode": 80,
+  "androidAppVersionName": "1.9.0",
+  "notes": "Jarvis Brain Core 2.0: server sincronizat cu Android 1.9.0."
 }

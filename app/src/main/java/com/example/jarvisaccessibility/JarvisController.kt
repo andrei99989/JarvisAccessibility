@@ -12,9 +12,18 @@ class JarvisController(
     private val customBlockedAppsManager = CustomBlockedAppsManager(service)
     private val customAllowedAppsManager = CustomAllowedAppsManager(service)
     private val installedAppsManager = InstalledAppsManager(service)
+    private val commandRouter = JarvisCommandRouter(installedAppsManager)
 
     fun executeCommand(rawCommand: String): String {
         val original = rawCommand.trim()
+
+
+        val routed = commandRouter.route(original)
+        if (routed.handled) {
+            return routed.reply
+        }
+
+
 
 
         val normalizedForDirectAppOpen = original
