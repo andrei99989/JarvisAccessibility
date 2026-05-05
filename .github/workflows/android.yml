@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - jarvis-brain-core-2
   workflow_dispatch:
 
 permissions:
@@ -26,18 +27,22 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build debug APK
-        run: gradle assembleDebug
+      - name: Build release APK
+        run: gradle assembleRelease
 
       - name: Copy APK
         run: |
           mkdir -p release
-          cp app/build/outputs/apk/debug/app-debug.apk release/app-debug.apk
+          cp app/build/outputs/apk/release/app-release.apk release/app-debug.apk
+
+      - name: Verify APK version
+        run: |
+          aapt dump badging release/app-debug.apk | grep "versionCode\|versionName"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JarvisAccessibility-debug
+          name: JarvisAccessibility-release
           path: release/app-debug.apk
 
       - name: Read version name
@@ -62,7 +67,7 @@ jobs:
           make_latest: true
           overwrite_files: true
 
-      - name: Publish APK to fixed latest release
+      - name: Publish APK to stable release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: stable
