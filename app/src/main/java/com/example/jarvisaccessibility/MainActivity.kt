@@ -60,6 +60,22 @@ class MainActivity : Activity() {
     private val maxHandsFreeCommands = 10
     private val smartVoiceInterpreter = SmartVoiceInterpreter()
 
+
+    private fun isJarvisAccessibilityEnabledInSettings(): Boolean {
+        val enabledServices = android.provider.Settings.Secure.getString(
+            contentResolver,
+            android.provider.Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
+        ) ?: return false
+
+        return enabledServices.contains(packageName, ignoreCase = true) &&
+            enabledServices.contains("JarvisAccessibilityService", ignoreCase = true)
+    }
+
+    private fun getJarvisAccessibilityServiceOrNull(): JarvisAccessibilityService? {
+        return JarvisAccessibilityService.instance
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -652,7 +668,7 @@ class MainActivity : Activity() {
 
         if (service == null) {
             aiStatusText.text = "Status AI: Accessibility inactiv"
-            resultText.text = "Serviciul Accessibility nu este activ."
+            resultText.text = if (isJarvisAccessibilityEnabledInSettings()) "Serviciul Accessibility este activ în setări, dar Jarvis trebuie repornit." else "Serviciul Accessibility nu este activ."
             return
         }
 
@@ -787,7 +803,7 @@ class MainActivity : Activity() {
         val service = JarvisAccessibilityService.instance
 
         if (service == null) {
-            resultText.text = "Serviciul Accessibility nu este activ."
+            resultText.text = if (isJarvisAccessibilityEnabledInSettings()) "Serviciul Accessibility este activ în setări, dar Jarvis trebuie repornit." else "Serviciul Accessibility nu este activ."
             return
         }
 
@@ -1094,7 +1110,7 @@ class MainActivity : Activity() {
         val service = JarvisAccessibilityService.instance
 
         if (service == null) {
-            statusText.text = "Status: Jarvis Accessibility NU este activ."
+            statusText.text = if (isJarvisAccessibilityEnabledInSettings()) "Status: Jarvis Accessibility este activ." else "Status: Jarvis Accessibility NU este activ."
         } else {
             statusText.text = "Status: Jarvis Accessibility este ACTIV."
         }

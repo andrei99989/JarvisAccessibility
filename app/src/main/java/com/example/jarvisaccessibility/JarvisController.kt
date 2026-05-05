@@ -16,6 +16,43 @@ class JarvisController(
     fun executeCommand(rawCommand: String): String {
         val original = rawCommand.trim()
 
+
+        val normalizedForDirectAppOpen = original
+            .lowercase()
+            .replace("ă", "a")
+            .replace("â", "a")
+            .replace("î", "i")
+            .replace("ș", "s")
+            .replace("ş", "s")
+            .replace("ț", "t")
+            .replace("ţ", "t")
+            .trim()
+
+        if (
+            normalizedForDirectAppOpen == "deschide youtube" ||
+            normalizedForDirectAppOpen == "deschide yootube" ||
+            normalizedForDirectAppOpen == "deschide you tube" ||
+            normalizedForDirectAppOpen == "intra pe youtube" ||
+            normalizedForDirectAppOpen == "intra pe yootube" ||
+            normalizedForDirectAppOpen == "intră pe youtube" ||
+            normalizedForDirectAppOpen == "intră pe yootube" ||
+            normalizedForDirectAppOpen == "porneste youtube" ||
+            normalizedForDirectAppOpen == "pornește youtube"
+        ) {
+            return installedAppsManager.openApp("YouTube")
+        }
+
+        if (
+            normalizedForDirectAppOpen == "deschide chrome" ||
+            normalizedForDirectAppOpen == "deschide google chrome" ||
+            normalizedForDirectAppOpen == "intra pe chrome" ||
+            normalizedForDirectAppOpen == "intră pe chrome"
+        ) {
+            return installedAppsManager.openApp("Chrome")
+        }
+
+
+
         val normalizedCommandForApps = original
             .lowercase()
             .replace("ă", "a")

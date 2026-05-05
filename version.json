@@ -1,9 +1,9 @@
 {
-  "versionCode": 74,
-  "versionName": "1.8.2",
+  "versionCode": 75,
+  "versionName": "1.8.3",
   "releaseUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/tag/stable",
   "apkUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/download/stable/app-debug.apk",
   "serverVersionCode": 9,
   "serverVersionName": "1.0.8",
-  "notes": "Upgrade sincronizat APK + localhost: crash guard pentru serviciul Accessibility și deschidere sigură aplicații."
+  "notes": "Fix deschidere directă YouTube și Chrome fără fallback fals către Accessibility."
 }
