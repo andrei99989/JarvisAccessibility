@@ -1,8 +1,8 @@
 {
   "versionCode": 74,
   "versionName": "1.8.2",
-  "releaseUrl": "https://github.com/Andrei9489/JarvisAccessibility/releases",
-  "apkUrl": "https://github.com/Andrei9489/JarvisAccessibility/releases/latest/download/app-debug.apk",
+  "releaseUrl": "https://github.com/Andrei9489/JarvisAccessibility/releases/tag/stable",
+  "apkUrl": "https://github.com/Andrei9489/JarvisAccessibility/releases/download/stable/app-debug.apk",
   "serverVersionCode": 9,
   "serverVersionName": "1.0.8",
   "notes": "Upgrade sincronizat APK + localhost: crash guard pentru serviciul Accessibility și deschidere sigură aplicații."

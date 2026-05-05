@@ -65,10 +65,10 @@ jobs:
       - name: Publish APK to fixed latest release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: Latest Jarvis Accessibility APK
+          tag_name: stable
+          name: Stable Jarvis Accessibility APK
           body: |
-            Latest Jarvis Accessibility APK
+            Stable Jarvis Accessibility APK
 
             Version code: ${{ steps.version.outputs.version_code }}
             Version name: ${{ steps.version.outputs.version_name }}
