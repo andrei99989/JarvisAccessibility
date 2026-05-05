@@ -27,7 +27,7 @@ class UpdateManager(
         Thread {
             try {
                 val jsonUrl =
-                    "https://raw.githubusercontent.com/Andrei9489/JarvisAccessibility/main/version.json"
+                    "https://raw.githubusercontent.com/andrei99989/JarvisAccessibility/main/version.json"
 
                 val connection = URL(jsonUrl).openConnection() as HttpURLConnection
                 connection.connectTimeout = 10000

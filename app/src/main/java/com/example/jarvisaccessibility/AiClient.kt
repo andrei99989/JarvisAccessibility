@@ -89,7 +89,7 @@ class AiClient(
                     headers = mapOf(
                         "Authorization" to "Bearer $apiKey",
                         "Content-Type" to "application/json",
-                        "HTTP-Referer" to "https://github.com/Andrei9489/JarvisAccessibility",
+                        "HTTP-Referer" to "https://github.com/andrei99989/JarvisAccessibility",
                         "X-Title" to "Jarvis Accessibility"
                     )
                 )

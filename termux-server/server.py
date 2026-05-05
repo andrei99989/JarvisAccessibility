@@ -20,7 +20,7 @@ LOCAL_SERVER_VERSION_NAME = "1.0.7"
 ANDROID_APP_VERSION_CODE = 73
 ANDROID_APP_VERSION_NAME = "1.8.1"
 
-REMOTE_VERSION_URL = "https://raw.githubusercontent.com/Andrei9489/JarvisAccessibility/main/server_version.json"
+REMOTE_VERSION_URL = "https://raw.githubusercontent.com/andrei99989/JarvisAccessibility/main/server_version.json"
 LOCAL_SERVER_PATH = os.path.abspath(__file__)
 
 def safe_shell(cmd, timeout_seconds=8):

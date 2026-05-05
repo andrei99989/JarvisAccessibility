@@ -45,7 +45,7 @@ class MainActivity : Activity() {
     private lateinit var jarvisCompletionManager: JarvisCompletionManager
     private lateinit var termuxServerClient: TermuxServerClient
 
-    private var lastReleaseUrl: String = "https://github.com/Andrei9489/JarvisAccessibility/releases"
+    private var lastReleaseUrl: String = "https://github.com/andrei99989/JarvisAccessibility/releases"
     private var lastApkUrl: String = ""
 
     private val speechRequestCode = 1001
