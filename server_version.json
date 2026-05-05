@@ -1,8 +1,8 @@
 {
-  "serverVersionCode": 8,
-  "serverVersionName": "1.0.7",
+  "serverVersionCode": 9,
+  "serverVersionName": "1.0.8",
   "serverUrl": "https://raw.githubusercontent.com/andrei99989/JarvisAccessibility/main/termux-server/server.py",
-  "androidAppVersionCode": 73,
-  "androidAppVersionName": "1.8.1",
-  "notes": "Upgrade sincronizat: serverul separă comenzile vocale în /voice-history și afișează voiceCommandCount în /status."
+  "androidAppVersionCode": 74,
+  "androidAppVersionName": "1.8.2",
+  "notes": "Upgrade sincronizat: serverul urmărește APK 1.8.2 cu crash guard Accessibility."
 }
