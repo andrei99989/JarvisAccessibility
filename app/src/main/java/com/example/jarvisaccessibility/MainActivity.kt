@@ -76,6 +76,72 @@ class MainActivity : Activity() {
     }
 
 
+
+    private fun executeCommandWithoutAccessibilityService(command: String): String {
+        val normalized = command
+            .lowercase()
+            .replace("ă", "a")
+            .replace("â", "a")
+            .replace("î", "i")
+            .replace("ș", "s")
+            .replace("ş", "s")
+            .replace("ț", "t")
+            .replace("ţ", "t")
+            .trim()
+
+        return when {
+            normalized == "deschide youtube" ||
+                normalized == "deschide yootube" ||
+                normalized == "deschide you tube" ||
+                normalized == "intra pe youtube" ||
+                normalized == "intra pe yootube" -> {
+                openInstalledAppFromActivity("YouTube")
+            }
+
+            normalized == "deschide chrome" ||
+                normalized == "deschide google chrome" ||
+                normalized == "intra pe chrome" -> {
+                openInstalledAppFromActivity("Chrome")
+            }
+
+            normalized.startsWith("deschide ") -> {
+                val appName = command.substringAfter("deschide").trim()
+                openInstalledAppFromActivity(appName)
+            }
+
+            else -> "Serviciul Accessibility este activ în setări, dar această comandă are nevoie de conectarea serviciului. Repornește Jarvis sau dezactivează/activează Jarvis Accessibility."
+        }
+    }
+
+    private fun openInstalledAppFromActivity(appName: String): String {
+        val normalizedTarget = appName
+            .lowercase()
+            .replace("yootube", "youtube")
+            .replace("you tube", "youtube")
+            .replace("google chrome", "chrome")
+            .trim()
+
+        val apps = packageManager.getInstalledApplications(android.content.pm.PackageManager.GET_META_DATA)
+
+        val match = apps.firstOrNull { app ->
+            val label = packageManager.getApplicationLabel(app).toString().lowercase()
+            val pkg = app.packageName.lowercase()
+
+            label == normalizedTarget ||
+                label.contains(normalizedTarget) ||
+                pkg.contains(normalizedTarget)
+        } ?: return "Nu am găsit aplicația $appName."
+
+        val launchIntent = packageManager.getLaunchIntentForPackage(match.packageName)
+            ?: return "Aplicația $appName nu poate fi deschisă."
+
+        launchIntent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(launchIntent)
+
+        return "Deschid $appName."
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
