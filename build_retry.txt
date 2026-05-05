@@ -3,3 +3,4 @@ Retry build after swipe overload fix
 force publish 1.8.2 Tue May  5 13:55:08 EEST 2026
 Force release APK 1.8.2 Tue May  5 14:08:24 EEST 2026
 Force overwrite latest APK 1.8.2 Tue May  5 14:15:54 EEST 2026
+Recreate latest release clean 1.8.2 Tue May  5 14:40:09 EEST 2026
