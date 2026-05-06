@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarvis HUD Interface</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="hud-shell">
+    <div class="background-grid"></div>
+    <div class="scanline"></div>
+
+    <header class="hud-header">
+      <div>
+        <span class="brand-kicker">ANDROID ASSISTANT SYSTEM</span>
+        <h1>J.A.R.V.I.S</h1>
+        <span class="brand-subtitle">Brain Core Interface v1.0</span>
+      </div>
+
+      <div class="top-status">
+        <div class="status-pill online"><span class="pulse-dot"></span> CORE ONLINE</div>
+        <div class="status-pill" id="connectionStatus">REST / WS STANDBY</div>
+      </div>
+    </header>
+
+    <main class="hud-layout">
+      <section class="left-stack">
+        <div class="holo-panel">
+          <div class="panel-title"><span>SYSTEM STATUS</span><small>LIVE</small></div>
+          <div class="metric-row"><span>AI Core</span><strong id="aiStatus">ONLINE</strong></div>
+          <div class="metric-row"><span>Voice Loop</span><strong id="voiceStatus">STANDBY</strong></div>
+          <div class="metric-row"><span>Termux Server</span><strong id="serverStatus">WAITING</strong></div>
+          <div class="metric-row"><span>Accessibility</span><strong id="accessibilityStatus">UNKNOWN</strong></div>
+        </div>
+
+        <div class="holo-panel command-panel">
+          <div class="panel-title"><span>COMMAND LOG</span><small id="commandCount">0</small></div>
+          <div class="command-log" id="commandLog">
+            <div class="log-entry boot">
+              <span class="log-time">00:00:00</span>
+              <span class="log-text">HUD initialized. Awaiting command stream.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="center-core">
+        <div class="core-orbit">
+          <div class="outer-ring ring"></div>
+          <div class="middle-ring ring"></div>
+          <div class="inner-ring ring"></div>
+
+          <div class="radar-core">
+            <div class="radar-sweep"></div>
+            <div class="radar-grid"></div>
+            <div class="radar-dot dot-a"></div>
+            <div class="radar-dot dot-b"></div>
+            <div class="radar-dot dot-c"></div>
+            <div class="core-label">
+              <span id="coreMode">STANDBY</span>
+              <strong>JARVIS</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="voice-visualizer" id="voiceVisualizer">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="command-display">
+          <small>LAST COMMAND</small>
+          <div id="lastCommand">No command received.</div>
+        </div>
+      </section>
+
+      <section class="right-stack">
+        <div class="holo-panel">
+          <div class="panel-title"><span>VOICE INPUT</span><small id="listeningState">IDLE</small></div>
+          <div class="listening-orb" id="listeningOrb"><div></div><span></span></div>
+          <p id="listeningText">Listening module standing by.</p>
+        </div>
+
+        <div class="holo-panel">
+          <div class="panel-title"><span>MAP / LOCATION</span><small>PLACEHOLDER</small></div>
+          <div class="map-placeholder" id="mapPanel">
+            <div class="map-grid"></div>
+            <div class="map-pin"></div>
+            <span>Map API not connected</span>
+          </div>
+        </div>
+
+        <div class="holo-panel">
+          <div class="panel-title"><span>PROCESSING</span><small id="processingState">READY</small></div>
+          <div class="processing-bars" id="processingBars">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p id="processingText">Neural routing idle.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="hud-footer">
+      <span>JARVIS HUD CHANNEL</span>
+      <span id="clock">--:--:--</span>
+      <span>TERMUX BACKEND: <strong id="backendMode">REST POLLING</strong></span>
+    </footer>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

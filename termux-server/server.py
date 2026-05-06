@@ -1,12 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from datetime import datetime
 import subprocess
 import os
+from pathlib import Path
 import json
 import urllib.request
 import urllib.parse
 
 app = Flask(__name__)
+
+PROJECT_ROOT = Path.home() / "JarvisAccessibility"
+UI_DIR = PROJECT_ROOT / "ui"
+
 
 START_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 LAST_COMMAND = ""
@@ -352,6 +357,15 @@ def auto_update_on_start():
     except Exception as e:
         AUTO_UPDATE_STATUS = f"Auto-update server eșuat: {e}"
 
+
+
+@app.route("/hud")
+def hud_index():
+    return send_from_directory(UI_DIR, "index.html")
+
+@app.route("/ui/<path:filename>")
+def hud_assets(filename):
+    return send_from_directory(UI_DIR, filename)
 
 @app.route("/")
 def home():
