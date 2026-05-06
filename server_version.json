@@ -1,8 +1,8 @@
 {
-  "serverVersionCode": 10,
-  "serverVersionName": "1.1.0",
+  "serverVersionCode": 11,
+  "serverVersionName": "1.1.1",
   "serverUrl": "https://raw.githubusercontent.com/andrei99989/JarvisAccessibility/main/termux-server/server.py",
-  "androidAppVersionCode": 80,
-  "androidAppVersionName": "1.9.0",
-  "notes": "Jarvis Brain Core 2.0: server sincronizat cu Android 1.9.0."
+  "androidAppVersionCode": 81,
+  "androidAppVersionName": "1.9.1",
+  "notes": "Jarvis HUD Live Core: /hud și /hud-data pentru interfața futuristă live."
 }

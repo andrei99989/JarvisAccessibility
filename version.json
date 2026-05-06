@@ -1,9 +1,9 @@
 {
-  "versionCode": 80,
-  "versionName": "1.9.0",
+  "versionCode": 81,
+  "versionName": "1.9.1",
   "releaseUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/tag/stable",
   "apkUrl": "https://github.com/andrei99989/JarvisAccessibility/releases/download/stable/app-debug.apk",
-  "serverVersionCode": 10,
-  "serverVersionName": "1.1.0",
-  "notes": "Jarvis Brain Core 2.0: router nou pentru comenzi de aplicații, aliasuri extinse și prioritate maximă pentru deschiderea aplicațiilor instalate."
+  "serverVersionCode": 11,
+  "serverVersionName": "1.1.1",
+  "notes": "Jarvis HUD Live Core: interfață HUD servită din Termux, endpoint /hud-data și polling live pentru status, comenzi și voice history."
 }
