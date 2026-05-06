@@ -491,13 +491,16 @@ def command_history():
 @app.route("/clear-history")
 def clear_history():
     global COMMAND_HISTORY
+    global VOICE_COMMAND_HISTORY
+
     COMMAND_HISTORY = []
-VOICE_COMMAND_HISTORY = []
+    VOICE_COMMAND_HISTORY = []
 
     return jsonify({
         "ok": True,
         "message": "Istoricul comenzilor serverului a fost șters."
     })
+
 
 @app.route("/update/check")
 def update_check():
