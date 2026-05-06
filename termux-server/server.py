@@ -415,6 +415,26 @@ def home():
     </html>
     """
 
+
+@app.route("/hud-data")
+def hud_data():
+    return jsonify({
+        "ok": True,
+        "status": "online",
+        "name": "Jarvis HUD Data",
+        "serverVersionCode": LOCAL_SERVER_VERSION_CODE,
+        "serverVersionName": LOCAL_SERVER_VERSION_NAME,
+        "androidAppVersionCode": ANDROID_APP_VERSION_CODE,
+        "androidAppVersionName": ANDROID_APP_VERSION_NAME,
+        "commandHistoryCount": len(COMMAND_HISTORY),
+        "voiceCommandCount": len(VOICE_COMMAND_HISTORY),
+        "lastCommand": COMMAND_HISTORY[0] if COMMAND_HISTORY else None,
+        "lastVoiceCommand": VOICE_COMMAND_HISTORY[0] if VOICE_COMMAND_HISTORY else None,
+        "commands": COMMAND_HISTORY[:10],
+        "voiceCommands": VOICE_COMMAND_HISTORY[:10],
+        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    })
+
 @app.route("/status")
 def status():
     return jsonify({
